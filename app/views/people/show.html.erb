@@ -1,0 +1,27 @@
+<% avatar = @person.avatar %>
+<p id="notice" class="<%= notice ? 'success' : '' %>">
+  <%= notice %>
+</p>
+
+<div class="ui card">
+  <div class="image">
+    <img
+      alt="user avatar"
+      src="https://robohash.org/<%= avatar %>?set=4"
+    />
+  </div>
+  <div class="content">
+    <p class="header">
+      <%= @person.first_name %> <%= @person.last_name %>
+    </p>
+    <div class="description">
+      <%= @person.email %>
+    </div>
+  </div>
+
+  <div class="extra content">
+    <%= link_to 'Edit', edit_person_path(@person) %> 
+    |
+    <%= link_to 'Back', people_path %>
+  </div>
+</div>
